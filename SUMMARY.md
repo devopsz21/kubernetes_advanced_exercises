@@ -1,4 +1,8 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Overview](README.md)
+
+## Advanced
+
+* [Vault](advanced/vault.md)
 
