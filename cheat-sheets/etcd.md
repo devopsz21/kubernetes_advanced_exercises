@@ -20,7 +20,7 @@ Use a single-node etcd cluster only for testing purpose.
 etcd --listen-client-urls=http://ETCD_NODE_IP:2379 --advertise-client-urls=http://ETCD_NODE_IP:2379
 ```
 
-#### Multi-node etcd cluster <a id="multi-node-etcd-cluster"></a>
+#### Multi-node etcd cluster  <a id="multi-node-etcd-cluster"></a>
 
 ```bash
 etcd --listen-client-urls=http://ETCD_NODE_IP1:2379, http://ETCD_NODE_IP2:2379, http://ETCD_NODE_IP3:2379 --advertise-client-urls=http://ETCD_NODE_IP1:2379, http://ETCD_NODE_IP2:2379, http://ETCD_NODE_IP3:2379
@@ -108,3 +108,4 @@ To go further in the management of etcd, please refer to these documentations :
 * Official [Github documentation](https://github.com/etcd-io/etcd/tree/master/Documentation)
 * Official [Github documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster) on disaster recovery
 * Official [Github documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/clustering.md) on etcd clustering 
+

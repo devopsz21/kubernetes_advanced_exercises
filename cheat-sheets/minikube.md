@@ -35,7 +35,7 @@ brew install kubernetes-cli
 {% endtab %}
 {% endtabs %}
 
-Once Minikube is installed, each configuration files can be found in the home directory : 
+Once Minikube is installed, each configuration files can be found in the home directory :
 
 ```bash
 %HOMEPATH%\.minikube
@@ -218,3 +218,4 @@ To go further in the management of Minikube, please refer to these documentation
 * Official [Minikube GitHub repository](https://github.com/kubernetes/minikube)
 * Official [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-minikube/) of Minikube
 * Official [Kubernetes documentation](https://kubernetes.io/docs/setup/minikube/) for running Minikube
+
