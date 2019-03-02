@@ -39,13 +39,13 @@ yum install -y kubectl
 {% endtab %}
 
 {% tab title="MacOS" %}
-#### From Brew
+### From Brew
 
 ```bash
 brew install kubernetes-cli
 ```
 
-#### From binary
+### From binary
 
 ```text
 # Download the binary
@@ -60,13 +60,13 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 {% endtab %}
 
 {% tab title="Windows" %}
-#### From Chocolatey
+### From Chocolatey
 
 ```bash
 choco install kubernetes-cli
 ```
 
-#### From binary
+### From binary
 
 Download the EXE binary.
 
@@ -835,7 +835,7 @@ The project [kube-ps1](https://github.com/jonmosco/kube-ps1) is a script that ad
 
 Here is an example of that useful tool :
 
-![](../.gitbook/assets/kube-ps1.gif)
+![](../.gitbook/assets/kubectl.gif)
 
 ## Plugins
 

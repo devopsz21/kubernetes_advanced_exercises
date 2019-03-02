@@ -4,11 +4,17 @@
 
 ## Security
 
-* [Vault](advanced/vault.md)
+* [Vault](security/vault.md)
 
 ## Service Mesh
 
 * [Istio](service-mesh/istio.md)
+
+## Cheat Sheets
+
+* [Minikube](cheat-sheets/minikube.md)
+* [Kubectl](cheat-sheets/kubectl.md)
+* [Etcd](cheat-sheets/etcd.md)
 
 ## Exercise App
 
@@ -19,8 +25,4 @@
 * [Kubernetes documentation](https://kubernetes.io/docs/home/)
 * [Kubernetes blog](https://kubernetes.io/blog/)
 * [Kubernetes API reference](https://v1-13.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/)
-
-## Cheat Sheets
-
-* [Kubectl](cheat-sheets/kubectl.md)
 
