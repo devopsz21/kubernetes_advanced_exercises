@@ -2,6 +2,10 @@
 
 * [Overview](README.md)
 
+## Monitoring
+
+* [Prometheus](monitoring/prometheus.md)
+
 ## Security
 
 * [Vault](security/vault.md)
