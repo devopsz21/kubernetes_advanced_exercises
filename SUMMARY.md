@@ -2,9 +2,18 @@
 
 * [Overview](README.md)
 
+## Storage
+
+* [Rook](storage/rook.md)
+
 ## Monitoring
 
 * [Prometheus](monitoring/prometheus.md)
+
+## Logging
+
+* [Elastic Stack](logging/elastic-stack.md)
+* [Fluentd](logging/fluentd.md)
 
 ## Security
 
@@ -13,6 +22,14 @@
 ## Service Mesh
 
 * [Istio](service-mesh/istio.md)
+
+## Tracing
+
+* [OpenTracing](tracing/opentracing.md)
+
+## Serverless
+
+* [Knative](serverless/knative.md)
 
 ## Cheat Sheets
 

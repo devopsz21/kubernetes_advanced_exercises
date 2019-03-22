@@ -1,8 +1,8 @@
-# Istio
+# Knative
 
 ## External documentation
 
 Those documentations can help you to go further in this topic :
 
-* Istio official documentation to [get started](https://istio.io/docs/)
+* Knative official documentation to [get started](https://www.knative.dev/docs/)
 
