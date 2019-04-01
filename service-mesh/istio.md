@@ -8,9 +8,9 @@ Istio is a service mesh created through a collaboration between IBM, Google and 
 
 At the end of this module, you will :
 
-* Learn how to deploy Istio on Kubernetes
-* Learn how to manage service accessibility
-* Learn how to get observability on the Kubernetes cluster
+* _Learn how to deploy Istio on Kubernetes_
+* _Learn how to manage service accessibility_
+* _Learn how to get observability on the Kubernetes cluster_
 
 #### Prerequisites
 
