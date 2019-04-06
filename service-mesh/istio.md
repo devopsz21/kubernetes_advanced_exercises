@@ -63,10 +63,10 @@ export PATH="$PATH:/home/yourusername/data/servicemesh/istio-1.1.1/bin"
 
 ```bash
 # Configure temporarily the current shell session
-export PATH="$PATH:/home/yourusername/data/servicemesh/istio-1.1.1/bin"
+export PATH=$PWD/istio-1.1.2/bin:$PATH
 
 # Configure permanently the shell session
-echo "PATH="$PATH:/home/yourusername/data/servicemesh/istio-1.1.1/bin" >> ~/.profile
+echo "PATH=$PATH:$PWD/istio-1.1.2/bin:$PATH" >> ~/.profile
 source ~/.profile
 ```
 
@@ -75,8 +75,8 @@ source ~/.profile
 ### Installation
 
 ```bash
-kubectl create -f ~/data/servicemesh/istio-1.1.1/install/kubernetes/helm/istio/templates/crds.yaml
-kubectl create -f ~/data/servicemesh/istio-1.1.1/install/kubernetes/istio-demo.yaml
+kubectl create -f ~/data/servicemesh/istio-1.1.2/install/kubernetes/helm/istio/templates/crds.yaml
+kubectl create -f ~/data/servicemesh/istio-1.1.2/install/kubernetes/istio-demo.yaml
 ```
 
 ### Get
