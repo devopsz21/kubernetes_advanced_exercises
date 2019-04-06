@@ -39,8 +39,14 @@ minikube start
 {% tabs %}
 {% tab title="Command" %}
 ```bash
+# Move to the module directory
 cd ~/data/servicemesh/
-curl -L https://git.io/getLatestIstio | sh - 
+
+# Download Istio packages
+curl -L https://git.io/getLatestIstio | sh -
+
+# Export istio version in environment variable
+export "ISTIO_VERSION=$(ls . | grep istio | cut -d "-" -f2)"
 ```
 {% endtab %}
 
@@ -63,10 +69,10 @@ export PATH="$PATH:/home/yourusername/data/servicemesh/istio-1.1.1/bin"
 
 ```bash
 # Configure temporarily the current shell session
-export PATH=$PWD/istio-1.1.2/bin:$PATH
+export PATH=$PWD/istio-$ISTIO_VERSION/bin:$PATH
 
 # Configure permanently the shell session
-echo "PATH=$PATH:$PWD/istio-1.1.2/bin:$PATH" >> ~/.profile
+echo "PATH=$PATH:$PWD/istio-$ISTIO_VERSION/bin:$PATH" >> ~/.profile
 source ~/.profile
 ```
 
@@ -75,8 +81,8 @@ source ~/.profile
 ### Installation
 
 ```bash
-kubectl create -f ~/data/servicemesh/istio-1.1.2/install/kubernetes/helm/istio/templates/crds.yaml
-kubectl create -f ~/data/servicemesh/istio-1.1.2/install/kubernetes/istio-demo.yaml
+kubectl create -f ~/data/servicemesh/istio-$ISTIO_VERSION/install/kubernetes/helm/istio/templates/crds.yaml
+kubectl create -f ~/data/servicemesh/istio-$ISTIO_VERSION/install/kubernetes/istio-demo.yaml
 ```
 
 ### Get
