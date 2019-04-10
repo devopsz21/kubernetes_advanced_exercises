@@ -36,6 +36,7 @@
 * [Minikube](cheat-sheets/minikube.md)
 * [Kubectl](cheat-sheets/kubectl.md)
 * [Etcd](cheat-sheets/etcd.md)
+* [Helm](cheat-sheets/helm.md)
 
 ## Exercise App
 
