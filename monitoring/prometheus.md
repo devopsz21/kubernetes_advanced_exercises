@@ -20,11 +20,30 @@ Create the directory `data/monitoring` in your home folder to manage the YAML fi
 mkdir ~/data/monitoring
 ```
 
+## Prometheus
+
+Prometheus is a full monitoring and trending system that includes built-in and active scraping, storing, querying, graphing, and alerting based on time series data. It has knowledge about what the environment should look like \(which endpoints should exist, what time series patterns mean trouble, etc.\), and actively tries to find faults. 
+
+Prometheus works well for recording any purely numeric time series. It fits both machine-centric monitoring as well as monitoring of highly dynamic service-oriented architectures. 
+
+In a world of microservices, its support for multi-dimensional data collection and querying is a particular strength. Prometheus is designed for reliability, to be the system you go to during an outage to allow you to quickly diagnose problems.
+
+The schema below describe the Prometheus architecture with each component and their roles :
+
+![Prometheus Architecture](../.gitbook/assets/image.png)
+
+Globally, Prometheus can be broken down into 4 parts : 
+
+* **Prometheus Server** : Main heart of Prometheus which scrapes and stores time series data. PromQL is the query language for Prometheus time series Data.
+* **Pushgateway :** For supporting short-lived jobs. The Prometheus Pushgateway exists to allow ephemeral and batch jobs to expose their metrics to Prometheus. Since these kinds of jobs may not exist long enough to be scraped, they can instead push their metrics to a Pushgateway. The Pushgateway then exposes these metrics to Prometheus.
+* **Jobs/Exporter** : Prometheus plugins are special-purpose exporters for services like HAProxy, StatsD, Graphite, etc. There are a number of libraries and servers which help in exporting existing metrics from third-party systems as Prometheus metrics.
+* **Alertmanager** : Handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integrations such as email, PagerDuty, or Slack. It also takes care of silencing and inhibition of alerts..
+
 ## Deploy
 
-### Manually
+Prometheus can be deployed on Kubernetes in many ways. This module will explain first how to deploy the stack with the Kubernetes package manage Helm and secondly with YAML files and Kubernetes command line Kubectl.
 
-### Helm
+### With Helm
 
 Helm is a tool that streamlines installing and managing Kubernetes applications. It is usually compared to with Linux package management tools like apt/yum/homebrew but for Kubernetes**.** In order words, its the packaging manager for Kubernetes. 
 
@@ -312,6 +331,8 @@ statefulset.apps/prometheus-kube-prometheus     1/1     11m
 ```
 {% endtab %}
 {% endtabs %}
+
+### With Kubectl
 
 ## Module exercise
 
