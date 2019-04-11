@@ -26,7 +26,7 @@ mkdir ~/data/monitoring
 
 ### Helm
 
-#### Configure the Tiller
+#### Configure the tiller
 
 ```bash
 # Create a dedicated service account named tiller
@@ -39,7 +39,7 @@ kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceac
 helm init --service-account tiller --upgrade
 ```
 
-#### Deploy Prometheus stack
+#### Deploy the operator
 
 Create a namespace dedicated to the monitoring stack.
 
@@ -100,6 +100,8 @@ to create & configure Alertmanager and Prometheus instances using the Operator.
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Deploy Prometheus
 
 Deploy the Prometheus stack in the dedicated namespace.
 
@@ -248,6 +250,58 @@ DEPRECATION NOTICE:
 - exporter-kube-scheduler.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
 - exporter-kubelets.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
 - exporter-kubernetes.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
+
+```
+{% endtab %}
+{% endtabs %}
+
+#### Get
+
+Ensure that Prometheus stack is up and running.
+
+{% tabs %}
+{% tab title="Command" %}
+```bash
+kubectl get all -n monitoring
+```
+{% endtab %}
+
+{% tab title="CLI Return" %}
+```bash
+NAME                                                       READY   STATUS    RESTARTS   AGE
+pod/alertmanager-kube-prometheus-0                         2/2     Running   2          11m
+pod/kube-prometheus-exporter-kube-state-7fdbfbf866-4wx5h   2/2     Running   0          8m36s
+pod/kube-prometheus-exporter-node-7c49t                    1/1     Running   0          11m
+pod/kube-prometheus-grafana-6c4dffd84d-pjb6p               2/2     Running   0          11m
+pod/prometheus-kube-prometheus-0                           3/3     Running   1          11m
+pod/prometheus-operator-545b59ffc9-d4gml                   1/1     Running   0          14m
+
+NAME                                          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/alertmanager-operated                 ClusterIP   None             <none>        9093/TCP,6783/TCP   11m
+service/kube-prometheus                       ClusterIP   10.108.177.181   <none>        9090/TCP            11m
+service/kube-prometheus-alertmanager          ClusterIP   10.98.18.115     <none>        9093/TCP            11m
+service/kube-prometheus-exporter-kube-state   ClusterIP   10.98.248.122    <none>        80/TCP              11m
+service/kube-prometheus-exporter-node         ClusterIP   10.103.171.99    <none>        9100/TCP            11m
+service/kube-prometheus-grafana               ClusterIP   10.98.4.110      <none>        80/TCP              11m
+service/prometheus-operated                   ClusterIP   None             <none>        9090/TCP            11m
+
+NAME                                           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/kube-prometheus-exporter-node   1         1         1       1            1           <none>          11m
+
+NAME                                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kube-prometheus-exporter-kube-state   1/1     1            1           11m
+deployment.apps/kube-prometheus-grafana               1/1     1            1           11m
+deployment.apps/prometheus-operator                   1/1     1            1           14m
+
+NAME                                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/kube-prometheus-exporter-kube-state-5858d86974   0         0         0       11m
+replicaset.apps/kube-prometheus-exporter-kube-state-7fdbfbf866   1         1         1       8m36s
+replicaset.apps/kube-prometheus-grafana-6c4dffd84d               1         1         1       11m
+replicaset.apps/prometheus-operator-545b59ffc9                   1         1         1       14m
+
+NAME                                            READY   AGE
+statefulset.apps/alertmanager-kube-prometheus   1/1     11m
+statefulset.apps/prometheus-kube-prometheus     1/1     11m
 
 ```
 {% endtab %}
