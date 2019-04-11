@@ -51,6 +51,10 @@ An alternative to helm is to create manifests files in json/yaml and use kubectl
 
 Helm comprises of a client and server application. The server side is called tiller and the client side is helm.
 
+{% hint style="info" %}
+This module consider that the Helm client is already installed. If it not the case, refer to the cheatsheet section on the left menu.
+{% endhint %}
+
 #### Configure the tiller
 
 Tiller usually runs inside the Kubernetes cluster. It needs some privileges to manage the state of each Kubernetes objects that it manages.
