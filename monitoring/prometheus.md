@@ -299,6 +299,36 @@ DEPRECATION NOTICE:
 
 At this point, Prometheus, Prometheus Alertmanager and Grafana should be installed.
 
+The _get_ command list the object asked. It could be a single object or a list of multiple objects comma separated. This command is useful to get the status of each object. The output can be formatted to only display some information based on some json search or external tools like `tr`, `sort`, `uniq`.
+
+#### Exercise n°1
+
+Ensure the Prometheus stack is up and running by listing all Pods created in the _monitoring_ namespace.
+
+{% tabs %}
+{% tab title="Command" %}
+```bash
+kubectl get pods -n monitoring
+```
+{% endtab %}
+
+{% tab title="CLI Return" %}
+```bash
+NAME                                                   READY   STATUS    RESTARTS   AGE
+alertmanager-kube-prometheus-0                         2/2     Running   2          68m
+kube-prometheus-exporter-kube-state-7fdbfbf866-4wx5h   2/2     Running   0          66m
+kube-prometheus-exporter-node-7c49t                    1/1     Running   0          68m
+kube-prometheus-grafana-6c4dffd84d-pjb6p               2/2     Running   0          68m
+prometheus-kube-prometheus-0                           3/3     Running   1          68m
+prometheus-operator-545b59ffc9-d4gml                   1/1     Running   0          72m
+```
+{% endtab %}
+{% endtabs %}
+
+#### Exercise n°2
+
+Get all the Kubernetes object created by the operator to deploy the Prometheus stack.
+
 {% tabs %}
 {% tab title="Command" %}
 ```bash
