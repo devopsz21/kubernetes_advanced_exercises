@@ -55,6 +55,14 @@ Helm comprises of a client and server application. The server side is called til
 This module consider that the Helm client is already installed. If it not the case, refer to the cheatsheet section on the left menu.
 {% endhint %}
 
+#### Configure the repository
+
+Prometheus operator is actually deployed on the coreos chart museum. To allow Helm to automatically download it, this specific Helm repository has to be configured.
+
+```bash
+helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
+```
+
 #### Configure the tiller
 
 Tiller usually runs inside the Kubernetes cluster. It needs some privileges to manage the state of each Kubernetes objects that it manages.
@@ -72,9 +80,13 @@ helm init --service-account tiller --upgrade
 
 #### Deploy the operator
 
-Create a namespace dedicated to the monitoring stack.
+Kubernetes Operator is a tool developed by CoreOS for self managing applications on top of Kubernetes. Kubernetes Operator represents human operational knowledge in software to reliably manage an application.
 
-Deploy Prometheus operator in it.
+An Operator is an application-specific controller that extends the Kubernetes API to create, configure, and manage instances of complex stateful applications on behalf of a Kubernetes user. It builds upon the basic Kubernetes resource and controller concepts but includes domain or application-specific knowledge to automate common tasks.
+
+The Prometheus Helm charts uses the Prometheus operator to easily manage the stack deployment on a Kubernetes cluster.
+
+The aim in this section is to deploy the Prometheus operator into a dedicated namespace named _monitoring_ to easily manage the stack.
 
 {% tabs %}
 {% tab title="Command" %}
