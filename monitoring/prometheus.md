@@ -26,7 +26,15 @@ mkdir ~/data/monitoring
 
 ### Helm
 
+Helm is a tool that streamlines installing and managing Kubernetes applications. It is usually compared to with Linux package management tools like apt/yum/homebrew but for Kubernetes**.** In order words, its the packaging manager for Kubernetes. 
+
+An alternative to helm is to create manifests files in json/yaml and use kubectl utility to install the manifest files manually but this can be slow and inefficient. Helm makes it quick and easy. 
+
+Helm comprises of a client and server application. The server side is called tiller and the client side is helm.
+
 #### Configure the tiller
+
+Tiller usually runs inside the Kubernetes cluster. It needs some privileges to manage the state of each Kubernetes objects that it manages.
 
 ```bash
 # Create a dedicated service account named tiller
