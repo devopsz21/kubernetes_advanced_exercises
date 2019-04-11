@@ -41,9 +41,7 @@ Globally, Prometheus can be broken down into 4 parts :
 
 ## Deploy
 
-Prometheus can be deployed on Kubernetes in many ways. This module will explain first how to deploy the stack with the Kubernetes package manage Helm and secondly with YAML files and Kubernetes command line Kubectl.
-
-### With Helm
+Prometheus can be deployed on Kubernetes in many ways. This module will explain how to deploy the stack with the Kubernetes package manage Helm.
 
 Helm is a tool that streamlines installing and managing Kubernetes applications. It is usually compared to with Linux package management tools like apt/yum/homebrew but for Kubernetes**.** In order words, its the packaging manager for Kubernetes. 
 
@@ -52,12 +50,12 @@ An alternative to helm is to create manifests files in json/yaml and use kubectl
 Helm comprises of a client and server application. The server side is called tiller and the client side is helm.
 
 {% hint style="info" %}
-This module consider that the Helm client is already installed. If it not the case, refer to the cheatsheet section on the left menu.
+This module consider that the Helm client is already installed. If it not the case, refer to the cheat-sheet section on the left menu.
 {% endhint %}
 
 #### Configure the repository
 
-Prometheus operator is actually deployed on the coreos chart museum. To allow Helm to automatically download it, this specific Helm repository has to be configured.
+Prometheus operator is actually deployed on the CoreOS chart museum. To allow Helm to automatically download it, this specific Helm repository has to be configured.
 
 ```bash
 helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
@@ -144,9 +142,9 @@ to create & configure Alertmanager and Prometheus instances using the Operator.
 {% endtab %}
 {% endtabs %}
 
-#### Deploy Prometheus
+#### Deploy the stack
 
-Deploy the Prometheus stack in the dedicated namespace.
+Once the operator is up and running on Kubernetes cluster, th stack can be easily deployed with Helm in the same dedicated namespace _monitoring_.
 
 {% tabs %}
 {% tab title="Command" %}
@@ -297,9 +295,9 @@ DEPRECATION NOTICE:
 {% endtab %}
 {% endtabs %}
 
-#### Get
+## Get
 
-Ensure that Prometheus stack is up and running.
+At this point, Prometheus, Prometheus Alertmanager and Grafana should be installed.
 
 {% tabs %}
 {% tab title="Command" %}
@@ -347,8 +345,6 @@ statefulset.apps/prometheus-kube-prometheus     1/1     11m
 ```
 {% endtab %}
 {% endtabs %}
-
-### With Kubectl
 
 ## Module exercise
 
