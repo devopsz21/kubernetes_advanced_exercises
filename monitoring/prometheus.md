@@ -250,7 +250,6 @@ DEPRECATION NOTICE:
 - exporter-kube-scheduler.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
 - exporter-kubelets.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
 - exporter-kubernetes.additionalRulesConfigMapLabels is not used anymore, use additionalRulesLabels
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -302,7 +301,6 @@ replicaset.apps/prometheus-operator-545b59ffc9                   1         1    
 NAME                                            READY   AGE
 statefulset.apps/alertmanager-kube-prometheus   1/1     11m
 statefulset.apps/prometheus-kube-prometheus     1/1     11m
-
 ```
 {% endtab %}
 {% endtabs %}
