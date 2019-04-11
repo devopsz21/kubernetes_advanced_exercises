@@ -144,7 +144,7 @@ to create & configure Alertmanager and Prometheus instances using the Operator.
 
 #### Deploy the stack
 
-Once the operator is up and running on Kubernetes cluster, th stack can be easily deployed with Helm in the same dedicated namespace _monitoring_.
+Once the operator is up and running on Kubernetes cluster, the stack can be easily deployed with Helm in the same dedicated namespace as the operator to centralize the management.
 
 {% tabs %}
 {% tab title="Command" %}
